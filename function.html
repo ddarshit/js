@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let addmision = alert("tell me  your marks")
+        addmision = prompt("enter your marks")
+        addmision = Number.parseInt(addmision)
+
+        function dd() {
+            return document.write("faill");
+        }
+        function ee() {
+            return document.write("avarage");
+        }
+        function gg() {
+            return document.write("good");
+        }
+        function op() {
+            return document.write("error");
+        }
+        function rr() {
+            return document.write("very good");
+        }
+
+        if (addmision <= 35) {
+            dd()
+        }
+        else if (addmision > 35 && addmision < 50) {
+            ee()
+        }
+        else if (addmision > 50 && addmision < 80) {
+            gg()
+        }
+        else if (addmision >= 80 && addmision <= 100) {
+            rr()
+        }
+        else if (addmision > 100) {
+            op()
+        }
+        else {
+            document.write("are you  eligible");
+            console.log("are you  eligible");
+        }
+
+    </script>
+</body>
+
+</html>
