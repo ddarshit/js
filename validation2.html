@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(64, 15, 110);
+            background-size: cover;
+        }
+
+        .conteiner {
+            width: 90%;
+            margin: 50px 80px;
+            background: #fff;
+            border-radius: 5px;
+        }
+
+        i {
+            margin: 10px 5px 0 8px;
+            color: black;
+            text-decoration: none;
+        }
+
+        .title {
+            text-align: center;
+            padding: 100px 0 0 0;
+            margin: 80px 0 0 0;
+        }
+
+        .title h1 {
+            margin: 0;
+            padding: 0;
+        }
+
+        .text {
+            background-color: white;
+            text-align: center;
+        }
+
+        .conteiner .form_left {
+            width: 100%;
+        }
+
+        .input_a {
+            margin: 50px 0 30px 0;
+        }
+
+        .input_b {
+            margin: 0 0 20px 0;
+        }
+
+        .input_c {
+            margin: 0 0 10px 0;
+        }
+
+        .input_d {
+            margin: 0 0 10px 0;
+        }
+
+        .input_e {
+            margin: 0 0 10px 0;
+        }
+
+        input[type=text],
+        input[type=password],
+        input[type=email] {
+            width: 20%;
+            border: none;
+            border-bottom: 2px solid rgb(77, 56, 56);
+            text-transform: uppercase;
+            outline: none;
+        }
+
+        input[type=submit] {
+            width: 10%;
+            padding: 5px;
+            background-color: blue;
+            color: white;
+            margin: 50px 0 20px 0;
+        }
+
+        input[type=submit]:hover {
+            background-color: blueviolet;
+        }
+
+        p {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="conteiner">
+        <div class="form_left">
+            <div><a href="#">
+                    <i class="fa fa-toggle-left"></i></a>Return home
+            </div>
+            <div class="title">
+                <div>
+                    <h1>SIGN IN</h1>
+                </div>
+                <form onsubmit="return validForm()" action="../CSS0/my web/index3.html">
+                    <div class="input_a">
+                        <label for="uname"></label>
+                        <input type="text" id="username" placeholder="Username">
+                        <p id="usererror"></p>
+                    </div>
+                    <div class="input_b">
+                        <label for="upassword"></label>
+                        <input type="password" id="userpassword" placeholder="password">
+                        <p id="passworderror"></p>
+                    </div>
+                    <div class="input_c">
+                        <label for="uemail"></label>
+                        <input type="email" id="useremail" placeholder="email">
+                        <p id="emailerror"></p>
+                    </div>
+                    <div class="input_d">
+                        <label for="gender">male</label>
+                        <input type="checkbox" id="usermale" name="male">
+                    </div>
+                    <div class="input_e">
+                        <label for="gender">female</label>
+                        <input type="checkbox" id="userfemale" name="female">
+                    </div>
+                    <p id="gendererror"></p>
+
+                    <div>
+                        <label for="checkbox"></label>
+                        <input type="checkbox" id="checkbox" name="interest" value="" />
+                    </div>
+                    <p id="checkboxerror"> </p>
+                    <div>
+                        <input type="submit" value="login">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            let username = document.getElementById("username")
+            let password = document.getElementById("userpassword")
+            let email = document.getElementById("useremail")
+            let male = document.getElementById("usermale")
+            let female = document.getElementById("userfemale")
+            let usererror = document.getElementById("usererror")
+            let passworderror = document.getElementById("passworderror")
+            let emailerror = document.getElementById("emailerror")
+            let checkbox = document.getElementById("checkbox")
+            let checkboxerror = document.getElementById("checkboxerror")
+            // let count = 1
+
+            function validForm() {
+
+                if (username.value == "") {
+                    usererror.innerHTML = "enter your name"
+                    // count = 0
+                    event.preventDefault()
+                }
+                else {
+                    document.getElementById("usererror").innerHTML = ""
+                    // count = 1
+                }
+                if (password.value == "") {
+                    passworderror.innerHTML = "enter your password fisrt"
+                    // count = 0
+                    event.preventDefault()
+                }
+                else if (password.value.length < 8) {
+                    passworderror.innerHTML = "max 8 char"
+                    // count = 0
+                    event.preventDefault()
+                }
+                else {
+                    document.getElementById("passworderror").innerHTML = ""
+                    // count = 1
+                }
+                if (email.value == "") {
+                    emailerror.innerHTML = "enter your email id"
+                }
+                else {
+                    document.getElementById("emailerror").innerHTML = ""
+                }
+                if (male.checked == false && female.checked == false) {
+                    gendererror.innerHTML = "please select a your gender"
+                    event.preventDefault()
+                }
+                else {
+                    document.getElementById("gendererror").innerHTML = ""
+                }
+               
+                if (checkbox.checked == false) {
+                    checkboxerror.innerHTML = "You didn\'t choose the checkboxes!"
+                    event.preventDefault()
+                }
+                else {
+                    document.getElementById("checkboxerror").innerHTML = ""
+                }
+
+                if (count) {
+                    return true
+                }
+                else {
+                    return false
+                }
+
+            }
+
+
+        </script>
+</body>
+
+</html>
