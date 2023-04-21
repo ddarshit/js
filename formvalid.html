@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-transform: uppercase;
+            margin: 0 0 50px 0 ;
+        }
+        p{
+            color: red;
+            
+        }
+        form{
+            background-color: aqua;
+            text-align: center;
+            padding: 50px 0;
+        }
+        input[type=submit]{
+            width: 10%;
+            padding: 5px;
+            margin: 20px 0 0 0;
+            background-color: brown;
+            border-radius: 4px;
+            color: white;
+            border: none;
+            outline: none;
+            text-transform: uppercase;
+        }
+        label{
+            margin: 0 20px 0 0;
+            text-transform: capitalize;
+        }
+        input[type=text]{
+            margin: 0 0 0 50px;
+            padding: 5px;
+            background-color: chartreuse;
+            color:orangered;
+        }
+        input[type=email]{
+            margin: 0 0 0 85px;
+            padding: 5px;
+            background-color: chartreuse;
+            color:orangered;
+        }
+        .pass2{
+            padding: 5px;
+            background-color:gold;
+            color:rgb(30, 210, 78);
+        }
+        .pass{
+            margin: 0 0 0 60px;
+            padding: 5px;
+            background-color:gold;
+            color:rgb(30, 210, 78);
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" onsubmit="sub()">
+        <div><h1>login form</h1></div>
+        <div>
+            <label for='your-name'>your name</label>
+            <input type="text" id='your-name' value="" >
+            <p id='p1'></p>
+        </div>
+        <div>
+            <label for="your-email">email</label>
+            <input type="email" id="your-email" >
+            <p id="p2"></p>
+        </div>
+        <div>
+            <label for="your-password">password</label>
+            <input type="password" id="your-password" class="pass">
+            <p id="p3"></p>
+        </div>
+        <div>
+            <label for="confirm-password">confirm-password</label>
+            <input type="password" id="confirm-password" class="pass2">
+            <p id="p4"></p>
+        </div>
+     
+        <div>
+           <input type="submit" value="savdata">
+        </div>
+    </form>
+     <script>
+        let yname = document.getElementById('your-name')
+        let yemail = document.getElementById('your-email')
+        let ypassword = document.getElementById('your-password')
+        let yconfirmpassword = document.getElementById('confirm-password')
+        let para1 = document.getElementById('p1')
+        let para2 = document.getElementById('p2')
+        let para3 = document.getElementById('p3')
+        let para4 = document.getElementById('p4')
+        let para5 = document.getElementById('p5')
+
+
+        function sub() {
+            let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            // let email = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9-])+@[a-zA-Z0-9-]*$/
+
+            if (yemail.value.length < 6) {
+                para2.innerHTML = 'value must be more than 6 letters'
+            }
+            else if (yemail.value != '') {
+                if (yemail.value.match(validRegex)) {
+                    para2.innerHTML = 'valid email address'
+                }
+                else {
+                    para2.innerHTML = 'not a valid email address'
+                }
+            }
+            else {
+                para2.innerHTML = 'ok'
+            }
+            if (ypassword.value.length < 8) {
+                para3.innerHTML = 'value must be more than 8 letters'
+            }
+            else if (ypassword.value != '') {
+                if (ypassword.value.search(/[0-9]/) == -1) {
+                    para3.innerHTML = 'include atleast 1 numeric value'
+
+                }
+                else if (ypassword.value.search(/[a-z]/) == -1) {
+                    para3.innerHTML = 'include atleast 1 lowercase character'
+                }
+                else if (ypassword.value.search(/[A-Z]/)== -1) {
+                    para3.innerHTML = 'include atleast 1 uppercase character'
+
+
+                }
+                else if (ypassword.value.search(/[!\@\#\$\%\^\&\*]/) == -1) {
+                    para3.innerHTML = 'include atleast 1 special symbol from this (!,@,#,$,%,^,&,*)'
+                }
+                else {
+                    para3.innerHTML = 'valid password'
+                }
+
+            }
+            else {
+                para3 = innerHTML = ''
+            }
+            if (yconfirmpassword.value != ypassword.value) {
+                para4.innerHTML = 'password not matches'
+
+            }
+            else {
+                para4.innerHTML = 'password is matches';
+            }
+
+            return false
+        }
+    </script> 
+</body>
+
+</html>
