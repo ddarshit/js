@@ -14,7 +14,6 @@
             box-shadow: 0px 0px 10px gray;
             position: relative;
             overflow: hidden;
-
         }
 
         img {
@@ -38,17 +37,19 @@
 <body>
 
     <div class="counteiner">
+
         <img src="https://picsum.photos/id/237/1000/500" class="img" alt="">
         <img src="https://picsum.photos/id/337/1000/500" class="img" alt="">
         <img src="https://picsum.photos/id/437/1000/500" class="img" alt="">
         <img src="https://picsum.photos/id/637/1000/500" class="img" alt="">
+
     </div>
 
     <div class="nav">
-        <button onclick="goPrev()">
+        <button id="btn1">
             Prev
         </button>
-        <button onclick="goNext()">
+        <button id="btn2">
             Next
         </button>
     </div>
@@ -56,32 +57,56 @@
     <script>
 
         // console.log(`${slide}`);
-        const slide = document.querySelectorAll('.img')
-        console.log(slide);
-        let count = 0
+        let slide = document.querySelectorAll('.img')
+        btn1 = document.querySelector('#btn1')
+        btn2 = document.querySelector('#btn2')
 
-        slide.forEach(
-            (img, index) => {
-                img.style.top = `${index * 100}%`
+        btn1.addEventListener("click", function goPrev() {
+            if (count === 0) {
+                count = 3;
+            } else {
+
+                count--;
             }
-        )
+            console.log(count)
+
+            slideImage()
+        })
+
+        btn2.addEventListener("click", function goNext() {
+            if (count === 3) {
+                count = 0;
+            } else {
+
+                count++;
+            }
+            console.log(count)
+
+            slideImage()
+        })
+
+        console.log(slide);
+        let count = 0;
 
         const slideImage = () => {
-            slide.forEach(
-                (img) => {
-                    img.style.transform = `translatey(${count * 100}%)`
-                }
-            )
+            reset()
+
+            slide[count].style.display = "block";
         }
-       
-        const goPrev = () => {
-            count++
-            slideImage()
+
+        function reset() {
+            for (let i = 0; i < slide.length; i++) {
+
+                slide[i].style.display = "none";
+            }
         }
-        const goNext = () => {
-            count--
-            slideImage()
+        console.log(slide.length)
+
+        function startslide() {
+            reset();
+            slide[0].style.display = "block";
         }
+        startslide()
 
     </script>
 
