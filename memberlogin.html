@@ -15,16 +15,15 @@
             box-sizing: border-box;
         }
 
-        .section {
-            background: rgba(71, 70, 70, 0.658);
-            padding: 40px 0;
+        .container {
+            width: 100%;
+            margin: 0 auto;
         }
 
-        .container {
-            width: 20%;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.975);
-            border-radius: 4px;
+        .section {
+            background: rgba(103, 101, 101, 0.658);
+            padding: 100px 0 0 0;
+            min-height: 100vh;
         }
 
         h2 {
@@ -33,22 +32,32 @@
             color: grey;
         }
 
+        .box {
+            width: 20%;
+            margin: 120px auto;
+            padding: 50px 0 0 0;
+            border-radius: 5px;
+            background-color: whitesmoke;
+            color: white;
+        }
+
         input {
-            width: 250px;
+            width: 80%;
             padding: 8px;
-            margin: 20px 10px 0 30px;
+            margin: 20px 50px 0 30px;
             border-radius: 4px;
             border: solid 2px grey;
             outline: none;
         }
 
         input[type=submit] {
-            width: 250px;
+            width: 80%;
             padding: 8px;
             background: rgb(90, 180, 205);
             color: white;
             border: none;
-            margin: 20px 10px 0 30px;
+            margin: 20px 50px 0 30px;
+
         }
 
         input[type=submit]:hover {
@@ -56,10 +65,11 @@
         }
 
         .forgot {
-            margin: 10px 0;
+            margin: 20px 0 0 0;
             padding: 10px;
             text-align: center;
             text-decoration: none;
+            border-radius: 5px;
             background: rgba(223, 213, 213, 0.82);
             color: grey;
         }
@@ -69,12 +79,23 @@
             color: grey;
         }
 
+        .po-re {
+            position: relative;
+        }
+
+        .po-ab {
+            position: absolute;
+        }
+
+        .icon {
+            top: -25px;
+            left: 130px;
+        }
+
         .icon i {
             font-size: 50px;
             color: rgb(72, 172, 202);
             border-radius: 50%;
-            margin: -60px 0 0 0;
-            padding: 0 0 0 130px;
         }
 
         #usererror,
@@ -82,28 +103,82 @@
             text-align: center;
             color: crimson;
         }
+
+        @media (min-width : 576px) {
+            .container {
+                width: 100%;
+            }
+
+            .box {
+                width: 40%;
+            }
+
+            .section {
+                min-height: 150vh;
+            }
+        }
+
+        @media (min-width : 768px) {
+            .container {
+                width: 720px;
+            }
+
+            .box {
+                width: 42%;
+            }
+
+            .section {
+                min-height: 150vh;
+            }
+        }
+
+        @media (min-width : 992px) {
+            .container {
+                width: 920px;
+            }
+
+            .box {
+                width: 32%;
+            }
+
+            .section {
+                min-height: 150vh;
+            }
+        }
+
+        @media (min-width : 1400px) {
+            .container {
+                width: 1320px;
+            }
+
+            .box {
+                width: 22%;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div class="section">
+    <section class="section">
         <div class="container">
-            <div class="icon"><i class="fa-regular fa-user"></i></div>
             <form onsubmit="return form()">
-                <div>
-                    <h2>Member Login</h2>
-                </div>
-                <div><input type="text" placeholder="Username" id="username"></div>
-                <p id="usererror"></p>
-                <div><input type="password" placeholder="Password" id="password"></div>
-                <p id="passworderror"></p>
-                <div><input type="submit" value="Sign in"></div>
-                <div class="forgot">
-                    <a href="#">Forgot Password?</a>
+                <div class="box po-re">
+                    <div class="icon po-ab"><i class="fa-regular fa-user"></i></div>
+                    <div>
+                        <h2>Member Login</h2>
+                    </div>
+                    <div><input type="text" placeholder="Username" id="username"></div>
+                    <p id="usererror"></p>
+                    <div><input type="password" placeholder="Password" id="password"></div>
+                    <p id="passworderror"></p>
+                    <div><input type="submit" value="Sign in"></div>
+                    <div class="forgot">
+                        <a href="#">Forgot Password?</a>
+                    </div>
                 </div>
             </form>
         </div>
-    </div>
+    </section>
 
     <script src="memberlogin.js"></script>
 </body>
