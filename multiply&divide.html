@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p,
+        h1 {
+            color: rgb(255, 0, 0);
+            text-align: center;
+        }
+
+        .dd {
+            width: 10%;
+            margin: 0 auto;
+        }
+        input[type=button] {
+            border:1px solid blue;
+        }
+        input[type=button]:hover {
+            border: 2px solid darkblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dd">
+        <form action="">
+            <div><label for="1stnumber">1st Number:</label>
+                <input type="text" name="" id="1stnumber">
+            </div> <br>
+            <div><label for="2ndnumber">2nd Number:</label>
+                <input type="text" name="" id="2ndnumber">
+            </div><br>
+            <div><input type="button" onclick="multiply()" value="Multiply">
+                <input type="button" onclick="divide()" value="Divide">
+            </div>
+        </form>
+    </div>
+    <h1>THE RESULT IS:</h1>
+    <p id="result"></p>
+
+    <script src="multiplydivide.js"></script>
+</body>
+
+</html>
