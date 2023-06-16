@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            width: 25%;
+            margin: 130px auto;
+        }
+
+        input {
+            width: 300px;
+            padding: 5px;
+            margin: 5px 15px;
+        }
+
+        .blog4 {
+            width: 300px;
+            border: solid 1px grey;
+            padding: 4px;
+            margin: 5px 15px;
+            background: rgb(197, 194, 194);
+        }
+
+        label {
+            margin: 0 0 0 15px;
+        }
+
+        textarea {
+            width: 305px;
+            margin: 5px 15px;
+        }
+
+        legend {
+            text-align: center;
+            font-size: xx-large;
+            color: goldenrod;
+            margin: 0 0 30px 0;
+        }
+
+        input[type=submit] {
+            width: 20%;
+            display: block;
+            margin: 0 auto;
+            background: goldenrod;
+            border: none;
+        }
+
+        p {
+            text-align: center;
+            color: red;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+    </style>
+
+</head>
+
+<body>
+        <form action="" id="blog" onsubmit="return blog()">
+            <fieldset>
+                <legend><b>Add a new blog</b></legend>
+                <div><label for="">Blog title:</label></div>
+                <div class="blog4">Blog 4</div>
+                <div><label for="Blogbody">Blog body:</label></div>
+                <div><textarea name="" id="Blogbody" cols="40" rows="2"></textarea></div>
+                <p id="blogbodyerror"></p>
+                <div><label for="Author">Author:</label></div>
+                <div><input type="text" id="Author"></div>
+                <p id="authorerror"></p>
+                <div><label for="Number">Number:</label></div>
+                <div><input type="tel" id="Number" pattern="[0-9]+" minlength="10" maxlength="10"></div>
+                <p id="Numbererror"></p>
+                <div><label for="Email">Email:</label></div>
+                <div><input type="email" id="Email"></div>
+                <p id="emailerror"></p>
+                <div><input type="submit" value="Save"></div>
+            </fieldset>
+        </form>
+
+    <script src="blog.js"></script>
+</body>
+
+</html>
